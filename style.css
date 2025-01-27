@@ -972,58 +972,78 @@ body{
     height: 24px;
     max-height: 24px;
   }
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f8f8f8;
-}
-
-.booking-container {
-  display: flex;
-  align-items: center;
-  background: white;
-  padding: 15px 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  gap: 20px;
+  .booking-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 70%; /* Ajusta l'amplada perquè no ocupi tota la fila */
+    margin: 0 auto; /* Centrar el contenidor */
+    position: relative;
+    top: -50px; /* Elevar el formulari sobre la imatge */
 }
 
 .booking-item {
-  display: flex;
-  flex-direction: column;
-  font-size: 14px;
-  color: #2b4d2d;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: #2b4d2d;
 }
 
 .booking-item label {
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #345b35; /* Verd fosc similar al de la imatge */
 }
 
 .booking-item input, 
 .booking-item select {
-  border: none;
-  border-bottom: 1px solid #ccc;
-  padding: 5px;
-  font-size: 14px;
-  outline: none;
-  width: 120px;
-  text-align: center;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    font-size: 14px;
+    outline: none;
+    width: 150px;
+    text-align: left;
+    background: transparent;
 }
 
 .booking-button {
-  background: #2b4d2d;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
+    background: #2b4d2d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
 }
 
 .booking-button:hover {
-  background: #1e3a21;
+    background: #1e3a21;
+}
+
+@media (max-width: 768px) {
+    .booking-container {
+        flex-direction: column;
+        width: 90%;
+        top: -20px;
+    }
+    
+    .booking-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .booking-button {
+        width: 100%;
+        margin-top: 10px;
+    }
 }
