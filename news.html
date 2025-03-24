@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <title>Notícies</title>
+</head>
+<body>
+  <h1>Totes les Notícies</h1>
+  <div id="llista-noticies"></div>
+
+  <script type="module">
+    import { bd } from './bdNoticies.js';
+
+    const container = document.getElementById('llista-noticies');
+
+    bd.forEach(noticia => {
+      const div = document.createElement('div');
+      div.innerHTML = `
+        <h2>${noticia.titol}</h2>
+        <p><strong>${noticia.data}</strong></p>
+        <p>${noticia.resum}</p>
+        <a href="detallNoticia.html?id=${noticia.id}">Llegir més</a>
+        <hr>
+      `;
+      container.appendChild(div);
+    });
+  </script>
+</body>
+</html>
